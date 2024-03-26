@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: opa-deployment
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: opa
+  template:
+    metadata:
+      labels:
+        app: opa
+    spec:
+      containers:
+      - name: opa-container
+        image: openpolicyagent/opa:edge-static-debug
+        command: ["/opa"]
+        args: ["run", "--server", "--addr=:8181"]
+        ports:
+        - containerPort: 8181

@@ -1,0 +1,8 @@
+{
+    "input": {
+        "action": "read",
+        "user": {
+           "authenticated": true
+        }
+    }
+}
