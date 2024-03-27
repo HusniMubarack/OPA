@@ -1,7 +1,8 @@
 {
     "input": {
-        "action": "read",
+        "action": "create",
         "user": {
+           "role": "admin",
            "authenticated": true
         }
     }

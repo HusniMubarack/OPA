@@ -1,15 +1,15 @@
 package main
 
 
-default allow_create_user = false
-default allow_read_users = false
+default allow = false
 
-allow_read_users {
+allow{
     input.action == "read"  
     input.user.authenticated == true
 }
 
-allow_create_user {
+allow {
     input.action == "create"
     input.user.role == "admin"
+    input.user.authenticated == true
 }
